@@ -26,20 +26,14 @@ function newPokemonID(id) {
     pokemonID.innerHTML = id;
 }
 
-// function newPokemonType(one) {
-//     type1.innerHTML = one;
-// }
-
 function newPokemonType(types){
     pokemonType.innerHTML = '';
 
     types.forEach(element => {
         console.log(element)
-        const tag = document.createElement('p');
-        const text = document.createTextNode(element.type.name);
-        tag.appendChild(text)
-        pokemonType.appendChild(tag)
-        // type1.innerHTML = element.type.name
+        let tag = document.createElement('p');
+        tag.textContent = element.type.name;
+        document.getElementById('pokemon-type').appendChild(tag);
     });
 }
 
@@ -70,3 +64,7 @@ function fetchPokemon() {
     })
     .catch(err => console.log(console.log(err)))
 }
+
+
+// Run at start of page 
+fetchPokemon();

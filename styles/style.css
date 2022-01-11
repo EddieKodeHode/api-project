@@ -50,10 +50,23 @@ main {
 
 /*  */
 
+#pokemon-type {
+    display: flex;
+}
+
+
+#pokemon-type p:nth-child(2)::before {
+    content: '/ ';
+    padding-left: 6px;
+}
+
+/*  */
+
 #img-box {
     height: 100px;
     width: 100px;
     margin: auto;
+    background-image: url(../images/bg.png);
 }
 
 #pokemon-img {
