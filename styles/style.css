@@ -50,6 +50,12 @@ main {
 
 /*  */
 
+#pokedex {
+    border: 2px solid black;
+    margin: 1em 2em;
+    background-color: grey;
+}
+
 #pokemon-type {
     display: flex;
 }
@@ -65,7 +71,7 @@ main {
 #img-box {
     height: 100px;
     width: 100px;
-    margin: auto;
+    margin: 1em auto;
     background-image: url(../images/bg.png);
 }
 
