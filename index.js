@@ -5,6 +5,7 @@ const pokemonID = document.getElementById('pokemon-ID');
 const pokemonType = document.getElementById('pokemon-type');
 const pokemonAbility = document.getElementById('pokemon-ability');
 const pokemonStats = document.getElementById('pokemon-stats');
+const clickMe = document.getElementById('click-me')
 // const type1 = document.getElementById('type-1')
 // const type2 = document.getElementById('type-2')
 
@@ -52,7 +53,6 @@ function newPokemonStats(stats){
     pokemonStats.innerHTML = '';
 
     stats.forEach(element => {
-        console.log('works')
         let tag = document.createElement('p');
         tag.textContent = element.base_stat;
         document.getElementById('pokemon-stats').appendChild(tag);
@@ -89,6 +89,7 @@ function fetchPokemon() {
     .catch(err => console.log(console.log(err)));
 }
 
+clickMe.addEventListener("click",fetchPokemon);
 
 // Run at start of page 
 fetchPokemon();
