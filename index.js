@@ -60,15 +60,18 @@ function newPokemonStats(stats){
 }
 
 // Animation
-// function transitionOut() {
-//     pokemonIMG.style.animationName = 'ball';
-//     pokemonIMG.style.animationIterationCount = '1';
-// }
+function transitionOut() {
+    pokemonIMG.style.animationName = 'ball';
+    pokemonIMG.style.animationIterationCount = '1';
+    // setTimeout(() => {
+    //     pokemonIMG.style.backgroundImage = 'images/pokeball.png';
+    // }, 1000);
+}
 
-// function transitionIn() {
-//     pokemonIMG.style.animationName = 'hop'
-//     pokemonIMG.style.animationIterationCount = 'infinite'
-// }
+function transitionIn() {
+    pokemonIMG.style.animationName = 'hop'
+    pokemonIMG.style.animationIterationCount = 'infinite'
+}
 
 
 // Fetch
@@ -84,7 +87,7 @@ fetch('https://pokeapi.co/api/v2/pokemon/1/')
     .catch(err => console.log(console.log(err)));
 
 function fetchPokemon(number) {
-    // transitionOut();
+    transitionOut();
     fetch('https://pokeapi.co/api/v2/pokemon/' + number + '/')
     .then((response) => {
         // console.log(response)
@@ -92,7 +95,7 @@ function fetchPokemon(number) {
     })
     .then(data => {
         console.log(data);
-        // transitionIn()
+        transitionIn();
         newPokemonName(data.name);
         newPokemonIMG(data.sprites.front_default);
         newPokemonID(data.id);
@@ -112,3 +115,8 @@ clickMe.addEventListener("click", fetchClick);
 
 // Run at start of page 
 fetchPokemon(randomNumber(1, 898));
+
+// test
+
+// const transitionBox = document.getElementById('transition-box');
+
